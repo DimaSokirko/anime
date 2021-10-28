@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+
+.pacman {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 70px;
+}
+.pacman::before, .pacman::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 80px solid #ffd000;
+  border-radius: 50%;
+  border-right: 80px solid transparent;
+  animation: anime1 linear 0.5s infinite;
+}
+.pacman::after {
+  animation: anime2 linear 0.5s infinite;
+}
+.pacman div:nth-child(1), .pacman div:nth-child(2), .pacman div:nth-child(3) {
+  background-color: #000;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -100px;
+  opacity: 0;
+}
+.pacman div:nth-child(1) {
+  animation: ball 1s 1s infinite linear;
+}
+.pacman div:nth-child(2) {
+  animation: ball 1s 0.5s infinite linear;
+}
+.pacman div:nth-child(3) {
+  animation: ball 1s 0s infinite linear;
+}
+.pacman__pupil {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 20px;
+  right: 40px;
+  background: #333333;
+}
+.pacman__eye {
+  position: absolute;
+  z-index: -1;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 13px;
+  right: 39px;
+  background: #fff;
+}
+
+@keyframes anime1 {
+  0% {
+    transform: rotate(270deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+@keyframes anime2 {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes ball {
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-120px, -50%);
+  }
+}
+.ghost {
+  margin: 0;
+  padding: 0;
+  padding-top: 237px;
+  width: auto;
+  height: auto;
+}
+.ghost__col {
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.ghost__yelow {
+  position: absolute;
+  height: 15px;
+  width: 60px;
+  transform: rotate(180deg);
+  background: linear-gradient(45deg, #ffd000 50%, transparent 51%), linear-gradient(315deg, #ffd000 50%, transparent 51%);
+  background-size: 30px 30px;
+  border-bottom: 40px solid #ffd000;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+}
+.ghost__red {
+  position: absolute;
+  height: 15px;
+  width: 60px;
+  transform: rotate(180deg);
+  background: linear-gradient(45deg, #ff0000 50%, transparent 51%), linear-gradient(315deg, #ff0000 50%, transparent 51%);
+  background-size: 30px 30px;
+  border-bottom: 40px solid #ff0000;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  margin-left: 70px;
+}
+.ghost__blue {
+  position: absolute;
+  height: 15px;
+  width: 60px;
+  transform: rotate(180deg);
+  background: linear-gradient(45deg, #0000ff 50%, transparent 51%), linear-gradient(315deg, #0000ff 50%, transparent 51%);
+  background-size: 30px 30px;
+  border-bottom: 40px solid #0000ff;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  margin-left: 140px;
+}
+.ghost__green {
+  height: 15px;
+  width: 60px;
+  transform: rotate(180deg);
+  background: linear-gradient(45deg, #00ff00 50%, transparent 51%), linear-gradient(315deg, #00ff00 50%, transparent 51%);
+  background-size: 30px 30px;
+  border-bottom: 40px solid #00ff00;
+  border-bottom-left-radius: 60%;
+  border-bottom-right-radius: 60%;
+  margin-left: 210px;
+}
+.ghost__eye-left {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 29px;
+  right: 9px;
+  background: #fff;
+}
+.ghost__eye-right {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 29px;
+  right: 38px;
+  background: #fff;
+}
+.ghost__pupil-left {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  top: auto;
+  right: 4px;
+  background: #333333;
+  animation: left 5s linear infinite;
+  transform-origin: 50% 7px;
+}
+.ghost__pupil-right {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  top: auto;
+  right: 4px;
+  background: #333333;
+  animation: right 5s linear infinite;
+  transform-origin: 50% 7px;
+}
+@keyframes right {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes left {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
